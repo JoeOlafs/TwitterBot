@@ -3,7 +3,6 @@ import requests
 from datetime import date
 
 date = date.today()
-print(type(date))
 html_text = requests.get('https://github.com/JoeOlafs').text
 soup = BeautifulSoup(html_text, 'lxml')
 dailyContribution = soup.find_all('rect', class_='ContributionCalendar-day')

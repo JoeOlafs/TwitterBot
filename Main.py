@@ -19,7 +19,7 @@ if GitContribution == 0:
 else:
      nextDay = dayNum + 1
      day = day.replace(day, str(nextDay))
-     tweet =   f"#Day{dayNum} of #100DaysofCode Challenge\nI made {GitContribution} contributions to my Github profile today. Sent out with my #TwitterBot\n#freeCodeCamp @freeCodeCamp @_100DaysOfCode"
+     tweet =   f"#Day{dayNum} of #100DaysofCode Challenge\nI made {GitContribution} contributions to my Github profile today. Sent out with my #TwitterBot\n#freeCodeCamp #CodeNewbie @freeCodeCamp @_100DaysOfCode"
 
 api.PostUpdate(tweet)
 

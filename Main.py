@@ -27,4 +27,8 @@ def git_tweet():
      with open('day.txt', 'w') as file:
           file.write(day)
 
+def article_tweet():
+     with open('links.txt', 'r') as file:
+          used_links = file.readlines()
+          print(used_links)
 git_tweet()

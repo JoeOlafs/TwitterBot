@@ -31,4 +31,5 @@ def article_tweet():
      with open('links.txt', 'r') as file:
           used_links = file.readlines()
           print(used_links)
+
 git_tweet()

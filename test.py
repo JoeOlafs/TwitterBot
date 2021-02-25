@@ -1,17 +1,22 @@
-from datetime import datetime
-import time
-import Main
+used_links = []
+with open('links.txt', 'r') as file:
+     for lines in file:
+          used_links.append(lines)
+print(used_links)
+for item in used_links:
+     print(item)
 
-while True:
-     now = datetime.now()
-     curr_time = now.strftime("%H:%M:%S")
-     var = curr_time.split(':')
-     hour = var[0]
-     minute = var[1]
-     print(curr_time)
-     print(minute)
-     if int(hour) == 23 and int(minute) == 59:
-          Main.git_tweet()
-          time.sleep(60*30)
+
+     if pot_link in used_links:
+          print(pot_link + ' has been used')
+          i = i + 1
+     elif pot_link2 in used_links:
+          print(pot_link + ' has been used')
+          i = i + 1
      else:
-          time.sleep(10)
+          next_link = pot_link
+          with open('links.txt', 'a') as file:
+               file.write('\n')
+               file.write(next_link)
+          print(next_link)
+          break

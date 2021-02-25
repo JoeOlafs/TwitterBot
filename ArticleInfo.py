@@ -10,4 +10,4 @@ for article in articles:
      if 'https' in article.attrs['href']:
           if article.attrs['href'] not in links:
                links.append(article.attrs['href'])
-print(links)
+#print(links)

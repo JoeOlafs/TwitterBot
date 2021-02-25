@@ -3,17 +3,22 @@ with open('links.txt', 'r') as file:
      used_links = file.readlines()
 print(used_links)
 
+
 link_ready = False
-i=0
-while link_ready == False:
-     if ArticleInfo.links[i] in used_links:
-          i = i + 1
-     else:
-          print(ArticleInfo.links[i])
-          link = ArticleInfo.links[i]
-          #used_links.append(ArticleInfo.links[i])
+temp_list = []
+i = 0
+
+while i < len(ArticleInfo.links):
+     pot_link = ArticleInfo.links[i]
+     pot_link2 = ArticleInfo.links[i] + '\\n'
+     print(pot_link2)
+     if pot_link not in used_links and pot_link2 not in used_links:
+          next_link = pot_link
           with open('links.txt', 'a') as file:
                file.write('\n')
-               file.write(ArticleInfo.links[i])
-          #print(used_links)
-          link_ready = True
+               file.write(next_link)
+          print(next_link)
+          break
+     else:
+          print(pot_link + ' has been used')
+          i = i + 1

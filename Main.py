@@ -1,6 +1,7 @@
 import twitter
 import os
 import info
+import ArticleInfo
 
 api = twitter.Api(consumer_key=os.environ.get('TwitterAPIKey'),
                     consumer_secret=os.environ.get('TwitterAPISecretKey'),
@@ -28,8 +29,35 @@ def git_tweet():
           file.write(day)
 
 def article_tweet():
-     with open('links.txt', 'r') as file:
-          used_links = file.readlines()
-          print(used_links)
+     used_links = []
+     used_links_check = []
 
-git_tweet()
+     with open('links.txt', 'r') as file:
+          for lines in file:
+               used_links.append(lines)
+
+     for line in used_links:
+          used_links_check.append(line.strip())
+
+     link_ready = False
+     next_link = ''
+     i = 0
+
+     while link_ready == False:
+          for item in ArticleInfo.links:
+               if item not in used_links_check:
+                    next_link = item
+                    link_ready = True
+                    break
+               else:
+                    i = i + 1
+                    if i == len(ArticleInfo.links):
+                         break
+     
+     if next_link != '':
+          tweet = f'Just a quick read for your enjoyment.\nFeatured on @hashnode\n\nSent out from my #TwitterBot\n#hashnode #codenewbie\n {next_link}'
+          api.PostUpdate(tweet)
+
+     with open('links.txt', 'a') as file:
+          file.write('\n')
+          file.write(next_link) 

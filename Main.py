@@ -52,7 +52,7 @@ def article_tweet():
                     break
                else:
                     i = i + 1
-                    if i == len(ArticleInfo.links):
+                    if i == len(article_links):
                          break
      
      if next_link != '':

@@ -3,7 +3,7 @@
 cd progs
 cd twitterbot
 
-python main.py
+python RunWithTweet.py
 
 cd ..
 cd ..

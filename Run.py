@@ -10,7 +10,7 @@ while True:
           hour = var[0]
           minute = var[1]
           print(curr_time)
-          print(minute)
+          #print(minute)
           if int(hour) == 23 and int(minute) == 59:
                Main.git_tweet()
                time.sleep(60*10)

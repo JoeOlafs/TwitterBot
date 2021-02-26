@@ -13,7 +13,7 @@ def git_tweet():
           day = file.read()
      dayNum = int(day)
 
-     GitContribution = info.contributionToday
+     GitContribution = info.gitInfo()
      if GitContribution == 0:
           nextDay = 1
           tweet = f"No contributions made to my Github profile today, guess I'll start #100DaysOfCode Again tomorrow @freeCodeCamp #freeCodeCamp @_100DaysOfCode"
@@ -42,9 +42,10 @@ def article_tweet():
      link_ready = False
      next_link = ''
      i = 0
+     article_links = ArticleInfo.articleInfo()
 
      while link_ready == False:
-          for item in ArticleInfo.links:
+          for item in article_links:
                if item not in used_links_check:
                     next_link = item
                     link_ready = True

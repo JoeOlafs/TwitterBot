@@ -56,9 +56,10 @@ def article_tweet():
                          break
      
      if next_link != '':
-          tweet = f'Just a quick read for your enjoyment.\nFeatured on @hashnode\n\nSent out from my #TwitterBot\n#hashnode #codenewbie\n {next_link}'
+          tweet = f'Just a quick read for your enjoyment.\nFeatured on @hashnode\n\nSent out from my #TwitterBot\n#hashnode\n {next_link}'
           api.PostUpdate(tweet)
-
-     with open('links.txt', 'a') as file:
-          file.write('\n')
-          file.write(next_link) 
+          with open('links.txt', 'a') as file:
+               file.write('\n')
+               file.write(next_link)
+     else:
+          print('No Article Available')

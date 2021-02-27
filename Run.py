@@ -17,7 +17,7 @@ while True:
                print('Git tweet posted')
           elif int(minute) == 30:
                Main.article_tweet()
-               print('Article posted')
+               print(f'Article {Main.next_link} posted')
                time.sleep(60*10)
           else:
                time.sleep(30)

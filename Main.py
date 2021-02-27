@@ -61,5 +61,3 @@ def article_tweet():
           with open('links.txt', 'a') as file:
                file.write('\n')
                file.write(next_link)
-     else:
-          print('No Article Available')

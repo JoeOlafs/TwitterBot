@@ -13,8 +13,8 @@ while True:
           #print(minute)
           if int(hour) == 23 and int(minute) == 59:
                Main.git_tweet()
-               time.sleep(60*10)
                print('Git tweet posted')
+               time.sleep(60*10)
           elif int(minute) == 30:
                Main.article_tweet()
                print('Article posted')

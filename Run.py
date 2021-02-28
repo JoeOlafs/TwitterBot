@@ -19,6 +19,10 @@ while True:
           #     Main.article_tweet()
           #     print('Article posted')
           #     time.sleep(60*10)
+          elif int(minute) != 0:
+               article = Main.article_tweet
+               #print(article)
+               time.sleep(1)
           else:
                time.sleep(60)
      except KeyboardInterrupt:

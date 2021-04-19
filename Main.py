@@ -1,6 +1,6 @@
 import twitter
 import os
-import info
+import GitInfo
 #import ArticleInfo
 
 api = twitter.Api(consumer_key=os.environ.get('TwitterAPIKey'),
@@ -13,7 +13,7 @@ def git_tweet():
           day = file.read()
      dayNum = int(day)
 
-     GitContribution = info.gitInfo()
+     GitContribution = GitInfo.gitInfo()
      if GitContribution == 0:
           nextDay = 1
           tweet = f"No contributions made to my Github profile today, guess I'll start #100DaysOfCode Again tomorrow @freeCodeCamp #freeCodeCamp @_100DaysOfCode"
@@ -27,18 +27,3 @@ def git_tweet():
 
      with open('day.txt', 'w') as file:
           file.write(day)
-
-def article_tweet():
-
-     next_link = 'link'
-
-     if next_link != '':
-          tweet = f'Just a quick read for your enjoyment.\nFeatured on @hashnode\n\nSent out from my #TwitterBot\n#hashnode\n {next_link}'
-          #api.PostUpdate(tweet)
-          #with open('links.txt', 'a') as file:
-          #     file.write('\n')
-          #     file.write(next_link)
-          return tweet
-     else:
-          results = 'no link available'
-          return results

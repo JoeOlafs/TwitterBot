@@ -1,7 +1,6 @@
 import twitter
 import os
 import GitInfo
-#import ArticleInfo
 
 api = twitter.Api(consumer_key=os.environ.get('TwitterAPIKey'),
                     consumer_secret=os.environ.get('TwitterAPISecretKey'),

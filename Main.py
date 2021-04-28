@@ -23,6 +23,9 @@ def git_tweet():
 
      api.PostUpdate(tweet)
 
+     os.system("Tweet uploaded")
+     os.system("Tweet: " + tweet)
+
 
      with open('day.txt', 'w') as file:
           file.write(day)

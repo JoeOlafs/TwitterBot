@@ -23,8 +23,8 @@ def git_tweet():
 
      api.PostUpdate(tweet)
 
-     os.system('Tweet uploaded')
-     os.system(f'Tweet: {tweet}')
+     os.system('echo Tweet uploaded')
+     os.system(f'echo Tweet: {tweet}')
 
 
      with open('day.txt', 'w') as file:
